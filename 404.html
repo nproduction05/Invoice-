@@ -66,6 +66,14 @@
             const apiUrl = '/nota/mapping.json';
 
             try {
+                // ...di dalam try sebelum if(nota)...
+console.log('Fetch status:', response.status);
+console.log('Full JSON data:', data);
+console.log('Cari dengan ID:', id_unik);
+
+const nota = data.find(item => item.id === id_unik);
+console.log('Hasil pencarian:', nota);
+                
                 const response = await fetch(apiUrl + '?nocache=' + new Date().getTime());
                 const data = await response.json();
 
